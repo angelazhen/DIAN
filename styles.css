@@ -155,6 +155,18 @@ img {
     transform: translateY(-1px);
 }
 
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-dark);
+    color: var(--color-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    transform: translateY(-1px);
+}
+
 .btn-large {
     padding: 1.25rem 3rem;
     font-size: 1.125rem;
@@ -471,6 +483,46 @@ section {
     margin-top: var(--spacing-sm);
 }
 
+/* Variety Pack Banner */
+.variety-pack-banner {
+    background-color: var(--color-soft-rose-pink);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-xl) auto 0;
+    max-width: 1400px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.variety-pack-banner-title {
+    font-family: var(--font-elegant);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 0 0 var(--spacing-sm) 0;
+    letter-spacing: -0.02em;
+}
+
+.variety-pack-banner-description {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-dark);
+    margin: 0 0 var(--spacing-xs) 0;
+    line-height: 1.6;
+}
+
+.variety-pack-banner-note {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--color-gray);
+    margin: 0 0 var(--spacing-md) 0;
+    font-weight: 500;
+}
+
+.variety-pack-banner-cta {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+}
+
 .variety-pack-image {
     width: 100%;
     background-color: var(--color-warm-cream);
@@ -502,6 +554,30 @@ section {
     height: 100%;
     object-fit: cover;
     transition: opacity 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    z-index: 5;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-overlay-content {
+    text-align: center;
+    color: var(--color-light);
+}
+
+.gallery-overlay-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-light);
+    margin: 0;
 }
 
 .gallery-nav-btn {
@@ -606,73 +682,6 @@ section {
     display: block;
 }
 
-.flavors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.flavor-card {
-    background-color: var(--color-light);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-}
-
-.flavor-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.flavor-image {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    background-color: var(--color-warm-cream);
-}
-
-.product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-    max-width: 100%;
-}
-
-.flavor-card:hover .product-image {
-    transform: scale(1.05);
-}
-
-.flavor-info {
-    padding: var(--spacing-md);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.flavor-name {
-    font-family: var(--font-heading);
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--color-dark);
-    margin: 0;
-}
-
-.flavor-notes {
-    font-size: 0.75rem;
-    color: var(--color-gray);
-    margin: var(--spacing-xs) 0;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
 .btn-quick-add {
     background-color: transparent;
     border: 1px solid var(--color-dark);
@@ -692,11 +701,6 @@ section {
 .btn-quick-add:hover {
     background-color: var(--color-dark);
     color: var(--color-light);
-}
-
-.variety-pack-cta {
-    text-align: center;
-    margin-top: var(--spacing-lg);
 }
 
 /* Chinese New Year Gift Set Section */
@@ -871,7 +875,7 @@ section {
 }
 
 .stars {
-    color: var(--color-soft-gold);
+    color: var(--color-soft-rose-pink);
     font-size: 1rem;
     margin-bottom: var(--spacing-md);
     letter-spacing: 2px;
@@ -1465,10 +1469,6 @@ section {
         font-size: 2.5rem;
     }
     
-    .flavors-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
     .variety-pack-hero {
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-lg);
@@ -1488,10 +1488,6 @@ section {
     
     .variety-pack-hero {
         gap: var(--spacing-lg);
-    }
-    
-    .flavors-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
     
     .testimonial-card {
@@ -1658,6 +1654,31 @@ section {
         padding-left: var(--spacing-md);
     }
     
+    /* Variety pack banner mobile */
+    .variety-pack-banner {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin: var(--spacing-lg) auto 0;
+    }
+    
+    .variety-pack-banner-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .variety-pack-banner-description {
+        font-size: 0.9375rem;
+    }
+    
+    .variety-pack-banner-note {
+        font-size: 0.875rem;
+    }
+    
+    .variety-pack-banner-cta {
+        width: 100%;
+        max-width: 280px;
+        margin-top: var(--spacing-sm);
+    }
+    
     .variety-pack-price {
         font-size: 1.75rem;
     }
@@ -1669,6 +1690,14 @@ section {
     /* Gallery mobile */
     .gallery-main {
         height: 350px;
+    }
+    
+    .gallery-overlay {
+        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
+    }
+    
+    .gallery-overlay-name {
+        font-size: 1.25rem;
     }
     
     .gallery-nav-btn {
@@ -1688,24 +1717,6 @@ section {
     .thumbnail-btn {
         flex: 0 0 60px;
         height: 60px;
-    }
-    
-    /* Flavors grid mobile */
-    .flavors-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    
-    .flavor-image {
-        height: 250px;
-    }
-    
-    .flavor-name {
-        font-size: 1rem;
-    }
-    
-    .flavor-notes {
-        font-size: 0.6875rem;
     }
     
     /* CNY gift set mobile */
@@ -1837,10 +1848,6 @@ section {
     .best-value-tag {
         font-size: 0.6875rem;
         padding: var(--spacing-xs) var(--spacing-sm);
-    }
-    
-    .variety-pack-cta {
-        margin-top: var(--spacing-md);
     }
     
     /* Footer mobile */

@@ -211,7 +211,7 @@
     // Animation on Scroll (Optional Enhancement)
     // ============================================
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.flavor-card, .testimonial-card');
+        const elements = document.querySelectorAll('.testimonial-card');
         
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
@@ -248,6 +248,7 @@
     const galleryThumbnails = document.getElementById('galleryThumbnails');
     const galleryNavLeft = document.getElementById('galleryNavLeft');
     const galleryNavRight = document.getElementById('galleryNavRight');
+    const galleryOverlay = document.getElementById('galleryOverlay');
     
     if (galleryMainImg && galleryThumbnails) {
         const thumbnailButtons = galleryThumbnails.querySelectorAll('.thumbnail-btn');
@@ -272,6 +273,16 @@
                     btn.classList.add('active');
                     // Scroll thumbnail into view if needed
                     btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    
+                    // Update overlay description
+                    if (galleryOverlay) {
+                        const flavorName = btn.getAttribute('data-name');
+                        const nameElement = galleryOverlay.querySelector('.gallery-overlay-name');
+                        
+                        if (nameElement && flavorName) {
+                            nameElement.textContent = flavorName;
+                        }
+                    }
                 } else {
                     btn.classList.remove('active');
                 }
@@ -436,7 +447,8 @@
     const reviewImages = [
         'images/review-gallery-1.jpg',
         'images/review-gallery-2.jpg',
-        'images/review-gallery-3.jpg'
+        'images/review-gallery-3.jpg',
+        'images/review-gallery-4.jpg'
     ];
     
     let currentLightboxIndex = 0;
